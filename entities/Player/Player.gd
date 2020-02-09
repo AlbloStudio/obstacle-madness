@@ -1,58 +1,48 @@
-class_name Player
 extends KinematicBody2D
+
+const Bullet = preload("res://entities/Bullet/Bullet.tscn")
+const DIRECTIONS = preload("./constants/directions.gd").DIRECTIONS
 
 export var speed := 600
 
 onready var _velocity := Vector2.ZERO
-onready var _current_animation : String = ACTION_STATES[0].ANIMATION;
+onready var _current_direction = DIRECTIONS[0] setget set_current_direction
 
-
-const ACTION_STATES := [
-  {
-    ACTION = "ui_left",
-    ANIMATION = "side",
-    FLIP_H = false,
-    DIRECTION = Vector2(-1, 0)
-  },
-  {
-    ACTION = "ui_right",
-    ANIMATION = "side",
-    FLIP_H = true,
-    DIRECTION = Vector2(1, 0)
-  },
-  {
-    ACTION = "ui_up",
-    ANIMATION = "back",
-    DIRECTION = Vector2(0, -1)
-  },
-  {
-    ACTION = "ui_down",
-    ANIMATION = "front",
-    DIRECTION = Vector2(0, 1)
-  }
-]
-
-func should_change_animation(animation: String) -> bool:
-  return not _current_animation == animation
-
-func should_flip(action) -> bool:
-  return action.has("FLIP_H") and not $Sprite.flip_h == action.FLIP_H
-
-func set_animation(action) -> void:
-  if should_change_animation(action.ANIMATION):
-    _current_animation = action.ANIMATION
-    $AnimationPlayer.play(action.ANIMATION)
-
-  if(should_flip(action)):
-    $Sprite.flip_h = action.FLIP_H
-
-func set_speed_and_animation() -> void:
-  for action in ACTION_STATES:
-    if Input.is_action_pressed(action.ACTION):
-      set_animation(action)
-      _velocity += action.DIRECTION
 
 func _physics_process(_delta: float) -> void:
   _velocity = Vector2.ZERO
   set_speed_and_animation()
   _velocity = move_and_slide(_velocity.normalized() * speed)
+  
+  if(Input.is_action_just_pressed("shoot")):
+    var bullet = Bullet.instance()
+    get_parent().add_child(bullet)
+    bullet.start(position)
+
+
+func should_change_animation(animation: String) -> bool:
+  print(animation)
+  return not _current_direction.ANIMATION == animation
+
+
+func should_flip(direction) -> bool:
+  return direction.has("FLIP_H") and not $Sprite.flip_h == direction.FLIP_H
+
+
+func set_current_direction(direction) -> void:
+  print(direction)
+  if should_change_animation(direction.ANIMATION):
+    _current_direction = direction
+    $AnimationPlayer.play(direction.ANIMATION)
+
+  if(should_flip(direction)):
+    $Sprite.flip_h = direction.FLIP_H
+
+
+func set_speed_and_animation() -> void:
+  for direction in DIRECTIONS:
+    if Input.is_action_pressed(direction.ACTION):
+      set_current_direction (direction)
+      _velocity += direction.DIRECTION
+
+
