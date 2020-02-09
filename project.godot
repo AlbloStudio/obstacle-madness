@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ObstacleMadness"
+run/main_scene="res://scenes/stage/Room.tscn"
 config/icon="res://icon.png"
 
 [input]
