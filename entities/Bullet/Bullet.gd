@@ -6,13 +6,9 @@ var _normalized_mouse_position:= Vector2.ZERO
 
 
 func _process(delta: float) -> void:
-  position += _normalized_mouse_position * delta * speed
+	position += _normalized_mouse_position * delta * speed
 
 
 func start(source: Vector2) -> void:
-  var mouse_position = get_global_mouse_position()
-  position = source
-  print(position)
-  
-  _normalized_mouse_position = (mouse_position - source).normalized()
-
+	position = source
+	_normalized_mouse_position = (get_global_mouse_position() - position).normalized()
