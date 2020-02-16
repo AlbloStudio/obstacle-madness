@@ -1,6 +1,7 @@
 extends Node
 
 const Bullet = preload("res://entities/Bullet/Bullet.tscn")
+const bullet_separation = 60
 
 export var bullets_per_second := 2
 
@@ -31,9 +32,13 @@ func handle_shooting(delta: float) -> void:
 
 
 func shoot() -> void:
+	var mouse_position = _scene.get_global_mouse_position()
 	var bullet = Bullet.instance()
 	_scene.add_child(bullet)
-	bullet.start(_player.position)
+	
+	var bullet_direction = (mouse_position - _player.position).normalized()
+	var bullet_start_position = _player.position + (bullet_direction * bullet_separation)
+	bullet.start(bullet_start_position)
 
 
 func is_time_to_shoot() -> bool:

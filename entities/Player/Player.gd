@@ -9,7 +9,7 @@ var _velocity := Vector2.ZERO
 var _current_direction = DIRECTIONS[0] setget set_current_direction
 
 
-func _physics_process() -> void:
+func _physics_process(_delta) -> void:
 	handle_movement()
 
 
