@@ -1,5 +1,6 @@
 extends Area2D
 
+
 export var speed:= 800
 
 var _normalized_mouse_position:= Vector2.ZERO
