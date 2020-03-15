@@ -1,15 +1,10 @@
-extends Area2D
+extends KinematicBody2D
 
+func _physics_process(delta: float) -> void:
+	var parent = get_parent()
 
-export var speed:= 800
+	var velocity = parent.direction * delta * parent.speed
+	var collision = move_and_collide(velocity)
+	if collision:
+		queue_free()
 
-var _direction := Vector2.ZERO
-
-
-func _process(delta: float) -> void:
-	position += _direction * delta * speed
-
-
-func start(source: Vector2, direction: Vector2) -> void:
-	position = source
-	_direction = direction
