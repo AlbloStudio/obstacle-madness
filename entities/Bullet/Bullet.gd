@@ -3,13 +3,13 @@ extends Area2D
 
 export var speed:= 800
 
-var _normalized_mouse_position:= Vector2.ZERO
+var _direction := Vector2.ZERO
 
 
 func _process(delta: float) -> void:
-	position += _normalized_mouse_position * delta * speed
+	position += _direction * delta * speed
 
 
-func start(source: Vector2) -> void:
+func start(source: Vector2, direction: Vector2) -> void:
 	position = source
-	_normalized_mouse_position = (get_global_mouse_position() - position).normalized()
+	_direction = direction

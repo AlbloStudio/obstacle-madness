@@ -20,7 +20,7 @@ func handle_movement() -> void:
 
 
 func should_change_animation(animation: String) -> bool:
-	return not _current_direction.ANIMATION == animation
+	return !$AnimationPlayer.is_playing() or not _current_direction.ANIMATION == animation
 
 
 func should_flip(direction) -> bool:
@@ -28,18 +28,25 @@ func should_flip(direction) -> bool:
 
 
 func set_current_direction(direction) -> void:
-	if should_change_animation(direction.ANIMATION):
-		_current_direction = direction
-		$AnimationPlayer.play(direction.ANIMATION)
+	_current_direction = direction
+	$AnimationPlayer.play(direction.ANIMATION)
 
 	if(should_flip(direction)):
 		$Sprite.flip_h = direction.FLIP_H
 
 
 func set_speed_and_animation() -> void:
+	var input_pressed = false
+
 	for direction in DIRECTIONS:
 		if Input.is_action_pressed(direction.ACTION):
-			set_current_direction (direction)
 			_velocity += direction.DIRECTION
+			if(not input_pressed):
+				set_current_direction(direction)
+				input_pressed = true
+			
+	if(not input_pressed):
+		$AnimationPlayer.stop(false)
+
 
 

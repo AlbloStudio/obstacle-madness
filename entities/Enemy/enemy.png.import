@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Alex.png-f0ad5bd95e8228baed5346c018b9a89e.stex"
+path="res://.import/enemy.png-c70b90b6d5fb089baa564f72c9bd70c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/Player/Alex.png"
-dest_files=[ "res://.import/Alex.png-f0ad5bd95e8228baed5346c018b9a89e.stex" ]
+source_file="res://entities/Enemy/enemy.png"
+dest_files=[ "res://.import/enemy.png-c70b90b6d5fb089baa564f72c9bd70c3.stex" ]
 
 [params]
 

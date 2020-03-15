@@ -32,13 +32,11 @@ func handle_shooting(delta: float) -> void:
 
 
 func shoot() -> void:
-	var mouse_position = _scene.get_global_mouse_position()
 	var bullet = Bullet.instance()
 	_scene.add_child(bullet)
 	
-	var bullet_direction = (mouse_position - _player.position).normalized()
-	var bullet_start_position = _player.position + (bullet_direction * bullet_separation)
-	bullet.start(bullet_start_position)
+	var bullet_start_position = _player.position + (_player._current_direction.DIRECTION * bullet_separation)
+	bullet.start(bullet_start_position, _player._current_direction.DIRECTION)
 
 
 func is_time_to_shoot() -> bool:
