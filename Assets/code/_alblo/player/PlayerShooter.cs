@@ -18,19 +18,12 @@ namespace Alblo.Actors.Player
         [SerializeField]
         private float rate = 0.3f;
 
-        [Tooltip("The particle system used when shooting")]
-        [SerializeField]
-        private ParticleSystem shootParticleSystem = null;
-
-        private PlayerAnimation playerAnimation = null;
-
+        private PlayerController playerController = null;
         private float timeSinceLastBullet = 0f;
-        private bool isShooting = false;
-        private ParticleSystem shootParticleSystemInstance = null;
 
         private void Start()
         {
-            this.playerAnimation = this.GetComponent<PlayerAnimation>();
+            this.playerController = this.GetComponent<PlayerController>();
         }
 
         private void Update()
@@ -40,31 +33,13 @@ namespace Alblo.Actors.Player
 
         private void HandleShooting()
         {
-            this.isShooting = this.GetShootVector() != Vector2.zero;
-
-            if (this.isShooting)
-            {
-                this.playerAnimation.ChangelayerFacing(this.GetShootVector());
-                if (!this.shootParticleSystemInstance)
-                {
-                    this.shootParticleSystemInstance = Instantiate(this.shootParticleSystem, this.transform);
-                }
-            }
-            else
-            {
-                if (this.shootParticleSystemInstance)
-                {
-                    Destroy(this.shootParticleSystemInstance.gameObject);
-                }
-            }
-
             if (this.timeSinceLastBullet > 0)
             {
                 this.timeSinceLastBullet -= Time.deltaTime;
             }
             else
             {
-                if (this.isShooting)
+                if (this.playerController.IsShooting)
                 {
                     this.ShootBullet();
                     this.timeSinceLastBullet = this.rate;
@@ -74,22 +49,8 @@ namespace Alblo.Actors.Player
 
         private void ShootBullet()
         {
-            Vector2 shootVector = this.GetShootVector();
-            var playerOffset = Vector2.Scale(new Vector2(0.6f, 0.7f), shootVector);
-
-            VectorUtils.Axis axis = shootVector.x != 0 ? VectorUtils.Axis.x : VectorUtils.Axis.y;
-            float offsetComponent = axis == VectorUtils.Axis.x ? playerOffset.x : playerOffset.y;
-
             Bullet bulletInstance = Instantiate(this.bullet, this.transform.position, Quaternion.identity);
-            bulletInstance.SetBulletTransform(axis, offsetComponent);
-        }
-
-        private Vector2 GetShootVector()
-        {
-            float horizontalShoot = Input.GetAxisRaw("shootHorizontal");
-            float verticalShoot = Input.GetAxisRaw("shootVertical");
-
-            return new Vector2(horizontalShoot, verticalShoot);
+            bulletInstance.Shoot(this.playerController.ShootingDirection, 0.65f);
         }
     }
 }

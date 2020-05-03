@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3240578235365968475}
   - component: {fileID: 3240578235365968474}
   - component: {fileID: 689491776687520470}
+  - component: {fileID: 847407323425151028}
   m_Layer: 8
   m_Name: player
   m_TagString: Untagged
@@ -172,3 +173,16 @@ MonoBehaviour:
   rate: 0.3
   shootParticleSystem: {fileID: 2096369495799416899, guid: ed628df03cc196649916c09ad8248d3e,
     type: 3}
+--- !u!114 &847407323425151028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240578235365968454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e5ff4f9c0d1954e8f995f08300965d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {x: 0, y: 0}

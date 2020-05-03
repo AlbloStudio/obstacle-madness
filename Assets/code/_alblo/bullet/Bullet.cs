@@ -4,6 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using Alblo.Utils;
 using UnityEngine;
 
 namespace Alblo.Actors
@@ -16,20 +17,18 @@ namespace Alblo.Actors
         private float speed = 10f;
 
         private Rigidbody2D rigidBody;
-        private Vector2 shootingDirection = Vector2.zero;
+        private Direction shootingDirection = Direction.None;
 
-        public void SetBulletTransform(VectorUtils.Axis axis, float directionOffset)
+        public void Shoot(Direction direction, float directionOffset)
         {
-            var shootingDirectionOffset = new Vector2(directionOffset, 0);
+            this.shootingDirection = direction;
 
-            if (axis == VectorUtils.Axis.y)
+            if (this.shootingDirection.IsVertical)
             {
-                shootingDirectionOffset = new Vector2(0, directionOffset);
                 this.spriteTransform.Rotate(new Vector3(0, 0, 90));
             }
 
-            this.transform.Translate(shootingDirectionOffset);
-            this.shootingDirection = shootingDirectionOffset.normalized;
+            this.transform.Translate(this.shootingDirection.GetAsVector2(directionOffset));
         }
 
         private void Start()
@@ -39,8 +38,8 @@ namespace Alblo.Actors
 
         private void FixedUpdate()
         {
-            float factor = Time.fixedDeltaTime * this.speed;
-            Vector2 movement = this.shootingDirection * factor;
+            float speedFactor = Time.fixedDeltaTime * this.speed;
+            Vector2 movement = this.shootingDirection.GetAsVector2(speedFactor);
             Vector2 newPosition = (Vector2)this.transform.position + movement;
             this.rigidBody.MovePosition(newPosition);
         }
