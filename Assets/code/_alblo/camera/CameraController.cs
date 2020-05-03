@@ -23,7 +23,7 @@ namespace Alblo.Camera
             this.transform.position = this.GetPlayerWithDistance();
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             this.transform.position = Vector3.SmoothDamp(this.transform.position, this.GetPlayerWithDistance(), ref this.velocity, MaxSpeed);
         }

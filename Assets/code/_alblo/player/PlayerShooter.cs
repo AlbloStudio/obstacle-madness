@@ -18,10 +18,15 @@ namespace Alblo.Actors.Player
         [SerializeField]
         private float rate = 0.3f;
 
+        [Tooltip("The particle system used when shooting")]
+        [SerializeField]
+        private ParticleSystem shootParticleSystem = null;
+
         private PlayerAnimation playerAnimation = null;
 
         private float timeSinceLastBullet = 0f;
         private bool isShooting = false;
+        private ParticleSystem shootParticleSystemInstance = null;
 
         private void Start()
         {
@@ -40,6 +45,17 @@ namespace Alblo.Actors.Player
             if (this.isShooting)
             {
                 this.playerAnimation.ChangelayerFacing(this.GetShootVector());
+                if (!this.shootParticleSystemInstance)
+                {
+                    this.shootParticleSystemInstance = Instantiate(this.shootParticleSystem, this.transform);
+                }
+            }
+            else
+            {
+                if (this.shootParticleSystemInstance)
+                {
+                    Destroy(this.shootParticleSystemInstance.gameObject);
+                }
             }
 
             if (this.timeSinceLastBullet > 0)
