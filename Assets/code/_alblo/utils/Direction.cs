@@ -19,10 +19,9 @@ namespace Alblo.Utils
 
     public class Direction
     {
-        public Facings Facing { get; private set; } = Facings.None;
-
         public static Direction None => new Direction();
 
+        public Facings Facing { get; private set; } = Facings.None;
         public bool IsHorizontal => this.Facing == Facings.Left || this.Facing == Facings.Right;
         public bool IsVertical => this.Facing == Facings.Back || this.Facing == Facings.Front;
         public bool IsNegative => this.Facing == Facings.Left || this.Facing == Facings.Front;

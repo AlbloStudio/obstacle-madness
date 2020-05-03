@@ -17,7 +17,7 @@ namespace Alblo.Actors.Player
 
         private Animator animator;
         private Rigidbody2D body;
-        private PlayerController playerController = null;
+        private IActorController playerController = null;
         private SpriteRenderer spriteRenderer;
 
         private void Start()
@@ -25,13 +25,13 @@ namespace Alblo.Actors.Player
             this.animator = this.GetComponent<Animator>();
             this.body = this.GetComponent<Rigidbody2D>();
             this.spriteRenderer = this.GetComponent<SpriteRenderer>();
-            this.playerController = this.GetComponent<PlayerController>();
+            this.playerController = this.GetComponent<IActorController>();
         }
 
         private void FixedUpdate()
         {
             this.MovePlayer();
-            this.changeFacingDirection();
+            this.ChangeFacingDirection();
         }
 
         private void MovePlayer()
@@ -43,7 +43,7 @@ namespace Alblo.Actors.Player
             this.animator.speed = this.playerController.MovementDirection.magnitude;
         }
 
-        private void changeFacingDirection()
+        private void ChangeFacingDirection()
         {
             this.animator.SetInteger("direction", (int)this.playerController.LookingAt.Facing);
             this.spriteRenderer.flipX = this.playerController.LookingAt.Facing == Facings.Left;

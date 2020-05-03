@@ -9,12 +9,13 @@ using UnityEngine;
 
 namespace Alblo.Actors.Player
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IActorController
     {
+        public bool IsShooting => !this.ShootingDirection.IsNone;
+
         public Vector2 MovementDirection { get; private set; }
         public Direction LookingAt { get; private set; }
         public Direction ShootingDirection { get; private set; }
-        public bool IsShooting => !this.ShootingDirection.IsNone;
 
         private void FixedUpdate()
         {
