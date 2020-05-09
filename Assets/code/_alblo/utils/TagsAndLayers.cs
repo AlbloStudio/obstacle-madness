@@ -6,8 +6,8 @@
 
 namespace Alblo.Utils
 {
-    public class TagsAndLayers
+    public static class TagsAndLayers
     {
-        public static string Projectile = "Projectile";
+        public static string Projectile => "Projectile";
     }
 }

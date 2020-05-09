@@ -17,7 +17,7 @@ namespace Alblo.Actors.Player
 
         private Animator animator;
         private Rigidbody2D body;
-        private IActorController playerController = null;
+        private IActorController actorController = null;
         private SpriteRenderer spriteRenderer;
 
         private void Start()
@@ -25,7 +25,7 @@ namespace Alblo.Actors.Player
             this.animator = this.GetComponent<Animator>();
             this.body = this.GetComponent<Rigidbody2D>();
             this.spriteRenderer = this.GetComponent<SpriteRenderer>();
-            this.playerController = this.GetComponent<IActorController>();
+            this.actorController = this.GetComponent<IActorController>();
         }
 
         private void FixedUpdate()
@@ -36,17 +36,17 @@ namespace Alblo.Actors.Player
 
         private void MovePlayer()
         {
-            Vector2 movement = this.playerController.MovementDirection * Time.fixedDeltaTime * this.speed;
+            Vector2 movement = this.actorController.MovementDirection * Time.fixedDeltaTime * this.speed;
             Vector2 newPosition = (Vector2)this.transform.position + movement;
             this.body.MovePosition(newPosition);
 
-            this.animator.speed = this.playerController.MovementDirection.magnitude;
+            this.animator.speed = this.actorController.MovementDirection.magnitude;
         }
 
         private void ChangeFacingDirection()
         {
-            this.animator.SetInteger("direction", (int)this.playerController.LookingAt.Facing);
-            this.spriteRenderer.flipX = this.playerController.LookingAt.Facing == Facings.Left;
+            this.animator.SetInteger("direction", (int)this.actorController.LookingAt.Facing);
+            this.spriteRenderer.flipX = this.actorController.LookingAt.Facing == Facings.Left;
         }
     }
 }

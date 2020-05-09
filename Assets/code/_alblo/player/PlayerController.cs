@@ -14,8 +14,8 @@ namespace Alblo.Actors.Player
         public bool IsShooting => !this.ShootingDirection.IsNone;
 
         public Vector2 MovementDirection { get; private set; }
-        public Direction LookingAt { get; private set; }
-        public Direction ShootingDirection { get; private set; }
+        public Direction LookingAt { get; private set; } = Direction.None;
+        public Direction ShootingDirection { get; private set; } = Direction.None;
 
         private void FixedUpdate()
         {
@@ -24,7 +24,11 @@ namespace Alblo.Actors.Player
 
             Vector2 facingDirection = shootInputDirection != Vector2.zero ? shootInputDirection : this.MovementDirection;
 
-            this.LookingAt = Direction.FromVector2(facingDirection);
+            if (facingDirection != Vector2.zero)
+            {
+                this.LookingAt = Direction.FromVector2(facingDirection);
+            }
+
             this.ShootingDirection = shootInputDirection != Vector2.zero ? Direction.FromVector2(shootInputDirection) : Direction.None;
         }
     }

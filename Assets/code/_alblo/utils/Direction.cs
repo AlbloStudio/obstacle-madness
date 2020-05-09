@@ -4,6 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System;
 using UnityEngine;
 
 namespace Alblo.Utils
@@ -36,14 +37,12 @@ namespace Alblo.Utils
                 Facing = Facings.None
             };
 
-            if (vector.x != 0)
-            {
-                direction.Facing = vector.x < 0 ? Facings.Left : Facings.Right;
-            }
-            else if (vector.y != 0)
-            {
-                direction.Facing = vector.y > 0 ? Facings.Back : Facings.Front;
-            }
+            Facings directionIfHorizontal = vector.x < 0 ? Facings.Left : Facings.Right;
+            Facings directionIfVertical = vector.y > 0 ? Facings.Back : Facings.Front;
+
+            bool shouldBeHorizontal = vector.x != 0 && Math.Abs(vector.x) >= Math.Abs(vector.y);
+
+            direction.Facing = shouldBeHorizontal ? directionIfHorizontal : directionIfVertical;
 
             return direction;
         }
