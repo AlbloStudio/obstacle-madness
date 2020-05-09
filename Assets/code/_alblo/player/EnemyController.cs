@@ -13,12 +13,16 @@ namespace Alblo.Actors.Player
     {
         [Tooltip("The target that the enemy will try to catch")]
         [SerializeField]
-        public Transform target = null;
+        private Transform target = null;
+
+        [Tooltip("How many times you have to shoot the enemy")]
+        [SerializeField]
+        private int lives = 3;
 
         public bool IsShooting => false;
 
-        public Vector2 MovementDirection { get; private set; }
-        public Direction LookingAt { get; private set; }
+        public Vector2 MovementDirection { get; private set; } = Vector2.zero;
+        public Direction LookingAt { get; private set; } = Direction.None;
         public Direction ShootingDirection => Direction.None;
 
         private void FixedUpdate()
@@ -34,7 +38,11 @@ namespace Alblo.Actors.Player
         {
             if (collision.gameObject.CompareTag(Utils.TagsAndLayers.Projectile))
             {
-                Destroy(this.gameObject);
+                this.lives -= 1;
+                if (this.lives <= 0)
+                {
+                    Destroy(this.gameObject);
+                }
             }
         }
     }
