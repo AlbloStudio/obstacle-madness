@@ -7,7 +7,7 @@
 using Alblo.Utils;
 using UnityEngine;
 
-namespace Alblo.Actors.Player
+namespace Alblo.Actors
 {
     public interface IActorController
     {

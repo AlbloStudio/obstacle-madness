@@ -7,7 +7,7 @@
 using Alblo.Utils;
 using UnityEngine;
 
-namespace Alblo.Actors.Player
+namespace Alblo.Actors.Enemy
 {
     public class EnemyController : MonoBehaviour, IActorController
     {
@@ -25,6 +25,11 @@ namespace Alblo.Actors.Player
         public Direction LookingAt { get; private set; } = Direction.None;
         public Direction ShootingDirection => Direction.None;
 
+        public void SetTarget(Transform newTarget)
+        {
+            this.target = newTarget;
+        }
+
         private void FixedUpdate()
         {
             this.MovementDirection = (this.target.position - this.transform.position).normalized;
@@ -38,7 +43,7 @@ namespace Alblo.Actors.Player
         {
             if (collision.gameObject.CompareTag(Utils.TagsAndLayers.Projectile))
             {
-                this.lives -= 1;
+                this.lives --;
                 if (this.lives <= 0)
                 {
                     Destroy(this.gameObject);
