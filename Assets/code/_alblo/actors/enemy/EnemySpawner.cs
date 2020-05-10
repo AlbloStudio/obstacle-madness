@@ -28,6 +28,8 @@ namespace Alblo.Actors.Enemy
         private void Start()
         {
             this.area = this.GetComponent<BoxCollider2D>();
+
+            this.Spawn();
         }
 
         private void Update()
@@ -37,9 +39,14 @@ namespace Alblo.Actors.Enemy
             if (this.timeCounter >= this.frequency)
             {
                 this.timeCounter = 0;
-                EnemyController enemyInstance = Instantiate(this.enemy, this.GetRandomPointInArea(), Quaternion.identity);
-                enemyInstance.SetTarget(this.target);
+                this.Spawn();
             }
+        }
+
+        private void Spawn()
+        {
+            EnemyController enemyInstance = Instantiate(this.enemy, this.GetRandomPointInArea(), Quaternion.identity);
+            enemyInstance.SetTarget(this.target);
         }
 
         private Vector2 GetRandomPointInArea()

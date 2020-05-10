@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------
-// <copyright file="PlayerAnimation.cs" company="alblo">
+// <copyright file="ActorAnimation.cs" company="alblo">
 //     Company copyright tag.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Alblo.Actors.Player
 {
-    public class PlayerAnimation : MonoBehaviour
+    public class ActorAnimation : MonoBehaviour
     {
         [Tooltip("speed the player has when moving")]
         [SerializeField]

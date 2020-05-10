@@ -15,10 +15,6 @@ namespace Alblo.Actors.Enemy
         [SerializeField]
         private Transform target = null;
 
-        [Tooltip("How many times you have to shoot the enemy")]
-        [SerializeField]
-        private int lives = 3;
-
         public bool IsShooting => false;
 
         public Vector2 MovementDirection { get; private set; } = Vector2.zero;
@@ -37,18 +33,6 @@ namespace Alblo.Actors.Enemy
             Vector2 facingDirection = this.MovementDirection;
 
             this.LookingAt = Direction.FromVector2(facingDirection);
-        }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag(Utils.TagsAndLayers.Projectile))
-            {
-                this.lives --;
-                if (this.lives <= 0)
-                {
-                    Destroy(this.gameObject);
-                }
-            }
         }
     }
 }

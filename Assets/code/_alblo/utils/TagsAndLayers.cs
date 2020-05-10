@@ -9,5 +9,6 @@ namespace Alblo.Utils
     public static class TagsAndLayers
     {
         public static string Projectile => "Projectile";
+        public static string Enemy => "Enemy";
     }
 }
