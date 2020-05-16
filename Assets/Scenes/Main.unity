@@ -542,6 +542,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &636522923 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 955159410175850444, guid: 511462aadd42a47bd84043e6854ee2bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 4784005928461148673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &765172522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,7 +1143,7 @@ PrefabInstance:
     - target: {fileID: 689491776687520470, guid: 66912c370a8c13b46a95f8aa62cf6ce4,
         type: 3}
       propertyPath: rate
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 847407323425151028, guid: 66912c370a8c13b46a95f8aa62cf6ce4,
         type: 3}
@@ -1254,11 +1260,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: stage
       objectReference: {fileID: 0}
+    - target: {fileID: 3746171725825801057, guid: 511462aadd42a47bd84043e6854ee2bb,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746171725825801057, guid: 511462aadd42a47bd84043e6854ee2bb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784005928596670895, guid: 511462aadd42a47bd84043e6854ee2bb,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 41ca99e263a1c4350af1ca641af502d9, type: 2}
+    - target: {fileID: 4784005929445360740, guid: 511462aadd42a47bd84043e6854ee2bb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4827307722160234302, guid: 511462aadd42a47bd84043e6854ee2bb,
         type: 3}
       propertyPath: m_TileSpriteArray.Array.size
@@ -6240,5 +6261,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5730769072069214898, guid: 10fd85cc2c8bfd84c9d2467a143a7f8b,
+        type: 3}
+      propertyPath: araOfEffect
+      value: 
+      objectReference: {fileID: 636522923}
+    m_RemovedComponents:
+    - {fileID: 5730769072069214899, guid: 10fd85cc2c8bfd84c9d2467a143a7f8b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 10fd85cc2c8bfd84c9d2467a143a7f8b, type: 3}

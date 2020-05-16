@@ -23,12 +23,16 @@ namespace Alblo.Actors.Enemy
         [SerializeField]
         private Transform target = null;
 
+        [Tooltip("The terrain area of effect")]
+        [SerializeField]
+        private Transform araOfEffect = null;
+
         private BoxCollider2D area = null;
         private Timer spawnTimer;
 
         private void Start()
         {
-            this.area = this.GetComponent<BoxCollider2D>();
+            this.area = this.araOfEffect.GetComponent<BoxCollider2D>();
 
             this.spawnTimer = Timer.Create(this.frequency, this.Spawn);
             this.Spawn();
