@@ -45,16 +45,8 @@ namespace Alblo.Actors.Enemy
 
         private void Spawn()
         {
-            EnemyController enemyInstance = Instantiate(this.enemy, this.GetRandomPointInArea(), Quaternion.identity);
+            EnemyController enemyInstance = Instantiate(this.enemy, Geometry.GetRandomPointInArea(this.area), Quaternion.identity);
             enemyInstance.SetTarget(this.target);
-        }
-
-        private Vector2 GetRandomPointInArea()
-        {
-            Vector2 center = this.area.bounds.center;
-            Vector2 size = this.area.bounds.size;
-
-            return center + new Vector2((Random.value - 0.5f) * size.x, (Random.value - 0.5f) * size.y);
         }
     }
 }

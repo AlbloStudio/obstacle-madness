@@ -8568,7 +8568,7 @@
   <sourcecode name="ActorAnimation.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/10 19:05:59.593</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
@@ -8591,7 +8591,7 @@
   <sourcecode name="EnemyController.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/10 19:12:39.265</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
@@ -8614,8 +8614,31 @@
   <sourcecode name="EnemyLife.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/10 19:08:35.686</sourceFile>
+      <parser>2020/05/02 11:30:14.463</parser>
+      <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1195506655</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2020/05/02 11:30:14.463</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2020/05/02 11:30:14.463</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2020/05/02 11:30:14.463</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2020/05/02 11:30:14.463</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2020/05/02 11:30:14.463</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2020/05/02 11:30:14.463</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="EnemySpawner.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2020/05/02 11:30:14.463</styleCop>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
+      <sourceFile>2020/05/16 19:18:09.568</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1195506655</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -8637,7 +8660,7 @@
   <sourcecode name="IActorController.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/10 19:06:01.793</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
@@ -8660,7 +8683,7 @@
   <sourcecode name="PlayerController.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/10 19:06:10.778</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
@@ -8683,8 +8706,8 @@
   <sourcecode name="PlayerLife.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
-      <sourceFile>2020/05/16 18:40:03.577</sourceFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
+      <sourceFile>2020/05/16 19:40:41.353</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1195506655</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -8706,7 +8729,7 @@
   <sourcecode name="PlayerShooter.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/16 18:54:57.947</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
@@ -8729,7 +8752,7 @@
   <sourcecode name="Bullet.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/09 19:22:37.739</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
@@ -8752,7 +8775,7 @@
   <sourcecode name="CameraController.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/09 19:22:41.918</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
@@ -8775,7 +8798,7 @@
   <sourcecode name="Direction.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/09 19:15:26.726</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
@@ -8795,10 +8818,39 @@
     </timestamps>
     <violations />
   </sourcecode>
+  <sourcecode name="Geometry.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2020/05/02 11:30:14.463</styleCop>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
+      <sourceFile>2020/05/16 19:45:23.890</sourceFile>
+      <parser>2020/05/02 11:30:14.463</parser>
+      <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1195506655</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2020/05/02 11:30:14.463</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2020/05/02 11:30:14.463</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2020/05/02 11:30:14.463</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2020/05/02 11:30:14.463</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2020/05/02 11:30:14.463</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2020/05/02 11:30:14.463</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
+        <context>The code must not contain multiple blank lines in a row.</context>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
   <sourcecode name="TagsAndLayers.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/09 19:34:57.402</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
@@ -8821,7 +8873,7 @@
   <sourcecode name="Timer.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
       <sourceFile>2020/05/16 18:53:57.282</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
@@ -8844,11 +8896,11 @@
   <project key="828850637">
     <configuration>DEBUG;TRACE;UNITY_2019_3_11;UNITY_2019_3;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</configuration>
   </project>
-  <sourcecode name="EnemySpawner.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="AtrezzoSetter.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2020/05/02 11:30:14.463</styleCop>
-      <settingsFile>2020/05/03 14:14:02.614</settingsFile>
-      <sourceFile>2020/05/16 19:01:41.054</sourceFile>
+      <settingsFile>2020/05/16 19:34:37.950</settingsFile>
+      <sourceFile>2020/05/16 19:51:10.847</sourceFile>
       <parser>2020/05/02 11:30:14.463</parser>
       <StyleCop.CSharp.DocumentationRules>2020/05/02 11:30:14.463</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1195506655</StyleCop.CSharp.DocumentationRules.FilesHashCode>
