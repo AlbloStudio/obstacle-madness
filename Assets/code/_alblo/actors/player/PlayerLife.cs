@@ -13,7 +13,7 @@ namespace Alblo.Actors.Player
 {
     public class PlayerLife : MonoBehaviour
     {
-        private readonly Dictionary<GameObject, float> enemiesHitting = new Dictionary<GameObject, float>();
+        private readonly Dictionary<GameObject, Timer> enemiesHitting = new Dictionary<GameObject, Timer>();
 
         [Tooltip("hits before dying")]
         [SerializeField]
@@ -21,12 +21,7 @@ namespace Alblo.Actors.Player
 
         [Tooltip("Time while enemies are hitting you to lose 1 life")]
         [SerializeField]
-        private float hitFrequency = 3;
-
-        private void Update()
-        {
-            this.HandleEnemiesHitting();
-        }
+        private float hitFrequency = 1;
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -34,7 +29,8 @@ namespace Alblo.Actors.Player
             {
                 if (!this.enemiesHitting.ContainsKey(collision.gameObject))
                 {
-                    this.enemiesHitting.Add(collision.gameObject, this.hitFrequency);
+                    this.Hit();
+                    this.AddEnemy(collision.gameObject);
                 }
             }
         }
@@ -45,37 +41,37 @@ namespace Alblo.Actors.Player
             {
                 if (this.enemiesHitting.ContainsKey(collision.gameObject))
                 {
-                    _ = this.enemiesHitting.Remove(collision.gameObject);
+                    this.RemoveEnemy(collision.gameObject);
                 }
             }
         }
 
-        private void HandleEnemiesHitting()
+        private void Update()
         {
-            var enemiesHittingNewValues = new Dictionary<GameObject, float>();
-
-            foreach (KeyValuePair<GameObject, float> enemyHitting in this.enemiesHitting)
+            foreach (KeyValuePair<GameObject, Timer> enemyHitting in this.enemiesHitting)
             {
-                float newTime = enemyHitting.Value + Time.deltaTime;
-
-                if (newTime >= this.hitFrequency)
-                {
-                    newTime = 0;
-
-                    this.hits--;
-                    if (this.hits <= 0)
-                    {
-                        SceneManager.LoadScene(0);
-                    }
-                }
-
-                enemiesHittingNewValues.Add(enemyHitting.Key, newTime);
+                enemyHitting.Value.Tick(Time.deltaTime);
             }
+        }
 
-            foreach (KeyValuePair<GameObject, float> enemyHittingNewValue in enemiesHittingNewValues)
+        private void Hit()
+        {
+            this.hits--;
+            if (this.hits <= 0)
             {
-                this.enemiesHitting[enemyHittingNewValue.Key] = enemyHittingNewValue.Value;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+        }
+
+        private void AddEnemy(GameObject enemy)
+        {
+            var timer = Timer.Create(this.hitFrequency, this.Hit);
+            this.enemiesHitting.Add(enemy, timer);
+        }
+
+        private void RemoveEnemy(GameObject enemy)
+        {
+            _ = this.enemiesHitting.Remove(enemy);
         }
     }
 }

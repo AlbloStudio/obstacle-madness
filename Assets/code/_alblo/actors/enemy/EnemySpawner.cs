@@ -4,6 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using Alblo.Utils;
 using UnityEngine;
 
 namespace Alblo.Actors.Enemy
@@ -22,25 +23,20 @@ namespace Alblo.Actors.Enemy
         [SerializeField]
         private Transform target = null;
 
-        private float timeCounter = 0f;
         private BoxCollider2D area = null;
+        private Timer spawnTimer;
 
         private void Start()
         {
             this.area = this.GetComponent<BoxCollider2D>();
 
+            this.spawnTimer = Timer.Create(this.frequency, this.Spawn);
             this.Spawn();
         }
 
         private void Update()
         {
-            this.timeCounter += Time.deltaTime;
-
-            if (this.timeCounter >= this.frequency)
-            {
-                this.timeCounter = 0;
-                this.Spawn();
-            }
+            this.spawnTimer.Tick(Time.deltaTime);
         }
 
         private void Spawn()

@@ -4,6 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using Alblo.Utils;
 using UnityEngine;
 
 namespace Alblo.Actors.Player
@@ -19,32 +20,18 @@ namespace Alblo.Actors.Player
         private float rate = 0.3f;
 
         private PlayerController playerController = null;
-        private float timeSinceLastBullet = 0f;
+        private Timer shooterTimer;
 
         private void Start()
         {
             this.playerController = this.GetComponent<PlayerController>();
+            this.shooterTimer = Timer.Create(this.rate, this.ShootBullet, true);
         }
 
         private void Update()
         {
-            this.HandleShooting();
-        }
-
-        private void HandleShooting()
-        {
-            if (this.timeSinceLastBullet > 0)
-            {
-                this.timeSinceLastBullet -= Time.deltaTime;
-            }
-            else
-            {
-                if (this.playerController.IsShooting)
-                {
-                    this.ShootBullet();
-                    this.timeSinceLastBullet = this.rate;
-                }
-            }
+            this.shooterTimer.Mode = this.playerController.IsShooting ? TimerModes.Running : TimerModes.Ready;
+            this.shooterTimer.Tick(Time.deltaTime);
         }
 
         private void ShootBullet()
